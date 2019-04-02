@@ -2,7 +2,7 @@ package com.chad.TFproblem;
 
 
 /**
- * stage 1: check whether a number is divisible by 3/5<br/>  
+ * stage 1: apply a rule - check whether a number is divisible by 3/5<br/>  
  * 
  * from i=1 to i=100<br/>
  * when 
@@ -17,36 +17,14 @@ public class TFstage1 {
 	public static final String FIZZ = "Fizz";
 	public static final String BUZZ = "Buzz";
 	
-	/**
-	 * <p>From 1 to 100, print Fizz if the number if number is divisible by 3
-	 *  and print Buzz if the number if number is divisible by 5.
-	 *   If both, ie 15, print FizzBuzz</p>
-	 */
-	public void playGame() {
-		for(int i = 1; i <=100; i++) {
-			System.out.print(mulOf3(i) ? FIZZ : "");
-			System.out.print(mulOf5(i) ? BUZZ : "");
-			System.out.print((mulOf3(i) || mulOf5(i)) ? "" : i);
-			System.out.println();
-		}
+
+	public void applyRule(int i) {
+		System.out.print(mulOf3(i) ? FIZZ : "");
+		System.out.print(mulOf5(i) ? BUZZ : "");
+		System.out.print((mulOf3(i) || mulOf5(i)) ? "" : i);
+		System.out.println();
 	}
-	/**
-	 * <p>At the very first, i write down this, this is a simply and quick
-	 *  way to solve the problem. use only if else-if to check.</p>
-	 */
-	public void playGameOri() {
-		for(int i = 1; i <=100; i++) {
-			if(i%3 == 0 && i%5 ==0) {
-				System.out.println(FIZZ + BUZZ);
-			}else if(i%3 == 0) {
-				System.out.println(FIZZ);
-			}else if(i%5 == 0) {
-				System.out.println(BUZZ);
-			}else {
-				System.out.println(i);
-			}
-		}
-	}
+
 	/**
 	 * <p>Whether the parameter is divisible by 3</p>
 	 * @param i

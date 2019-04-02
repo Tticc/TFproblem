@@ -2,27 +2,25 @@ package com.chad.TFproblem;
 
 /**
  * <p>stage 2:</p>
- * <p>Combine TFstage1, add additional condition "contain 3 or 5"</p>
+ * <p>Extends TFstage1, add additional condition "contain 3 or 5"</p>
  * 
  * @see TFstage1
  * @author wenc
  *
  */
-public class TFstage2{
+public class TFstage2 extends TFstage1{
+
 	/**
-	 * <p>From 1 to 100, print Fizz if the number contain or is divisible by 3
-	 *  and print Buzz if the number contain or is divisible by 5.
-	 *   If both, ie 15, print FizzBuzz</p>
+	 * applyRule
 	 */
-	public void playGame() {
-		for(int i = 1; i < 100; i++) {
-			boolean containOrMulOf3 = (TFstage1.mulOf3(i) || contain3(i));
-			boolean containOrMulOf5 = (TFstage1.mulOf5(i) || contain5(i));
-			System.out.print(containOrMulOf3 ? TFstage1.FIZZ : "");
-			System.out.print(containOrMulOf5 ? TFstage1.BUZZ : "");
-			System.out.print(containOrMulOf3 || containOrMulOf5 ? "" : i);
-			System.out.println();
-		}
+	@Override
+	public void applyRule(int i) {
+		boolean containOrMulOf3 = (TFstage1.mulOf3(i) || contain3(i));
+		boolean containOrMulOf5 = (TFstage1.mulOf5(i) || contain5(i));
+		System.out.print(containOrMulOf3 ? TFstage1.FIZZ : "");
+		System.out.print(containOrMulOf5 ? TFstage1.BUZZ : "");
+		System.out.print(containOrMulOf3 || containOrMulOf5 ? "" : i);
+		System.out.println();
 	}
 	/**
 	 * <p>String the int para and check whether it contains 3 </p>

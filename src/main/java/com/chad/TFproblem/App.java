@@ -6,8 +6,13 @@ package com.chad.TFproblem;
  */
 public class App 
 {
+	/**
+	 * start app. new MyClass instance with parameter students number and rule.
+	 * @param args
+	 */
     public static void main( String[] args )
     {
-        new TFstage2().playGame();
+        //new MyClass(33, new TFstage1()).playTheGame();
+        new MyClass(33, new TFstage2()).playTheGame();
     }
 }
